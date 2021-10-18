@@ -1,0 +1,33 @@
+div aside{
+    background-color: rgb(148, 170, 170);
+    float: left;
+    width: 12%;
+    height:584.5px;
+    padding: 15px;
+}
+header{
+    background-color: rgb(78, 78, 143);
+    padding: 20px;
+    
+}
+
+header h1{
+    text-align: center;
+    color:black;
+    opacity: 1;
+}
+header button{
+    color: aliceblue;
+    text-align: right;
+}
+body ul{
+    list-style: none;
+}
+body form{
+    background-color: rgb(92, 92, 167);
+    width: 20%;
+    padding: 2%;
+    margin-top:50px;
+    margin-left: 38%;
+    margin-right: 38%;
+}
