@@ -25,6 +25,7 @@ body ul{
 }
 body form{
     background-color: rgb(92, 92, 167);
+    min-width:fit-content;
     width: 20%;
     padding: 2%;
     margin-top:50px;
