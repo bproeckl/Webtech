@@ -48,11 +48,14 @@ table{
 th, td {
     padding: 15px;
     text-align: left;
-  }
-  th {
+}
+
+th {
     background-color: #04AA6D;
     color: white;
-  }
-  tr{background-color: #8f8f8f;}
-  tr:nth-child(even){background-color: #f2f2f2;}
+}
+
+tr{background-color: #8f8f8f;}
+
+tr:nth-child(even){background-color: #f2f2f2;}
   
