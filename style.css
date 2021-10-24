@@ -20,6 +20,14 @@ header button{
     color: aliceblue;
     text-align: right;
 }
+
+body{
+    background-image: url('hintergrund.jfif');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 body ul{
     list-style: none;
 }
@@ -32,6 +40,10 @@ body form{
     margin-left: 38%;
     margin-right: 38%;
 }
+table{
+    padding: 15%;
+    padding-top: 5%;
+}
 
 th, td {
     padding: 15px;
@@ -41,4 +53,6 @@ th, td {
     background-color: #04AA6D;
     color: white;
   }
+  tr{background-color: #8f8f8f;}
   tr:nth-child(even){background-color: #f2f2f2;}
+  
