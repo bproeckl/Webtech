@@ -1,8 +1,6 @@
 div aside{
     background-color: rgba(125, 170, 170, 0.411);
     float: left;
-    width: 12%;
-    height:584.5px;
     padding: 15px;
 }
 header{
@@ -16,9 +14,14 @@ header h1{
     color:black;
     opacity: 1;
 }
-header button{
-    color: aliceblue;
-    text-align: right;
+
+#navbar{
+    background-color: rgba(125, 170, 170, 0.411);
+    float: center;
+    padding: 15px;
+    width: 100%;
+    margin: 20px;
+    margin-top: 5px;
 }
 
 body{
@@ -33,16 +36,43 @@ body ul{
 }
 body form{
     background-color: rgba(3, 3, 136, 0.24);
-    min-width:fit-content;
-    width: 20%;
+    width:fit-content;
     padding: 2%;
     margin-top:50px;
-    margin-left: 38%;
-    margin-right: 38%;
 }
+
 table{
     padding: 15%;
     padding-top: 5%;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    
+}
+
+.flex-container div img{
+    padding-left: 10%;
+}
+
+#navbar div a:visited,#navbar div a:link{
+    background-color: rgba(125, 170, 170, 0.555);
+    padding: 5px;
+    border: black;
+    border-width: 1px;
+    text-decoration: none;
+    color: black;
+}
+
+#navbar div a:hover,#navbar div a:active{
+    background-color: rgba(3, 3, 136, 0.582);
+    padding: 5px;
+    border: black;
+    border-width: 1px;
+    text-decoration: none;
+    color: white;
 }
 
 th, td {
