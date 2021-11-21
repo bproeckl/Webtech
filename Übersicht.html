@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Übersicht</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
 </head>
+
+
 
 <body>
     <header>
@@ -20,7 +23,7 @@
             <div><a href="Einfügen.html">Einfügen</a></div>
         </div>
         <div>
-            <table>
+            <table id="table">
                 <tr>
                     <th>Reisename</th>
                     <th>Startdatum</th>
@@ -29,49 +32,55 @@
                     <th></th>
                     <th></th>
                 </tr>
-                <tr>
-                    <td>Deutschland-Reise</td>
-                    <td>1.1.2000</td>
-                    <td>1.1.2001</td>
-                    <td>Deutschland</td>
-                    <td><button> <a href="Bearbeiten.html">Bearbeiten</a> </button></td>
-                    <td><button>Löschen</button></td>
-                </tr>
-                <tr>
-                    <td>Deutschland-Reise</td>
-                    <td>1.1.2000</td>
-                    <td>1.1.2001</td>
-                    <td>Deutschland</td>
-                    <td><button><a href="Bearbeiten.html">Bearbeiten</a></button></td>
-                    <td><button>Löschen</button></td>
-                </tr>
-                <tr>
-                    <td>Deutschland-Reise</td>
-                    <td>1.1.2000</td>
-                    <td>1.1.2001</td>
-                    <td>Deutschland</td>
-                    <td><button><a href="Bearbeiten.html">Bearbeiten</a></button></td>
-                    <td><button>Löschen</button></td>
-                </tr>
-                <tr>
-                    <td>Deutschland-Reise</td>
-                    <td>1.1.2000</td>
-                    <td>1.1.2001</td>
-                    <td>Deutschland</td>
-                    <td><button><a href="Bearbeiten.html">Bearbeiten</a></button></td>
-                    <td><button>Löschen</button></td>
-                </tr>
-                <tr>
-                    <td>Deutschland-Reise</td>
-                    <td>1.1.2000</td>
-                    <td>1.1.2001</td>
-                    <td>Deutschland</td>
-                    <td><button><a href="Bearbeiten.html">Bearbeiten</a></button></td>
-                    <td><button>Löschen</button></td>
-                </tr>
             </table>
         </div>
     </div>
 </body>
-
+<script>
+    function entfernen(index){
+        Liste1.deleteByIndex(index);
+        location.reload();
+    }
+    function edit(index){
+        Liste1.setEdit(index);
+        window.location.href = "Bearbeiten.html"
+    }
+    function update () {
+        const tabelle = document.getElementById('table');
+        var counter=0	  
+        for (const x of Liste1.liste) {
+            const reihe = tabelle.insertRow(1);
+            for (var i = 0; i < 6; i++) {
+                var inhalt;
+                zelle = reihe.insertCell();
+                switch (i) {
+                    case 0:
+                        inhalt = x.name;
+                        zelle.innerHTML = inhalt;
+                        break;
+                    case 1:
+                        inhalt = x.date1;
+                        zelle.innerHTML = inhalt;
+                        break;
+                    case 2:
+                        inhalt = x.date2;
+                        zelle.innerHTML = inhalt;
+                        break;
+                    case 3:
+                        inhalt = x.country;
+                        zelle.innerHTML = inhalt;
+                        break;
+                    case 4:
+                        zelle.innerHTML="<button onclick='edit("+counter+")'>Bearbeiten</button>";
+                        break;
+                    case 5:
+                        zelle.innerHTML="<button onclick='entfernen("+counter+")'>Löschen</button>";
+                        break;
+                }
+            }
+            counter++;
+        }        
+    }
+    update();
+</script>
 </html>

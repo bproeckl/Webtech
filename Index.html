@@ -13,9 +13,8 @@
            Login
        </h1>
    </header> 
-   <div class="flex-container">
-    <div>
-        <form>
+
+   <form>
         <fieldset style="border-color: black;">
             <legend>Login:</legend>
             <label for="email">E-Mail Adresse:</label><br>
@@ -23,10 +22,23 @@
             <label for="pword">Passwort:</label><br>
             <input type="password" name="Passwort" id="pword" required><br>
             <br>
-            <button><a href="Karte.html">Login</a></button>
-            
+            <input type="button" value="Login" onclick="pasuser()">            
         </fieldset>
    </form>
-    </div>
+
+   <script type="text/javascript">
+       function pasuser() {
+        if (email.value=="huehne@htw-berlin.de" && pword.value=="hunter2") { 
+            location="Übersicht.html" 
+        } 
+        else {  
+            alert("E-Mail/Passwort ist ungültig")
+        }
+        localStorage.setItem(email.value, pword.value)
+        }
+    </script>
+
+
 </body>
 </html>
+
