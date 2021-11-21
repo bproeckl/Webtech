@@ -7,9 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bearbeiten</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
 </head>
 
 <body>
+    
     <header>
         <h1>Reise bearbeiten</h1>
     </header>
@@ -27,12 +29,12 @@
                     <label for="name">Name:</label><br>
                     <input type="text" name="name" id="name" value="Deutschland-Reise" required><br>
                     <label for="reiseanfang">Reiseanfang:</label><br>
-                    <input type="date" name="reiseanfang" id="reiseanfang" value="2000-01-01" required><br>
+                    <input type="date" name="reiseanfang" id="date1" value="2000-01-01" required><br>
                     <label for="reiseende">Reiseende:</label><br>
-                    <input type="date" name="reiseende" id="reiseende" value="2001-01-01" required><br>
+                    <input type="date" name="reiseende" id="date2" value="2001-01-01" required><br>
                     <label for="reiseland">Reiseland:</label><br>
-                    <select required>
-                        <option value="Deutschland">Deutschland</option>
+                    <select id="country" required>
+                        <option value="Germany">Deutschland</option>
                         <option value="Afghanistan">Afghanistan</option>
                         <option value="Albania">Albania</option>
                         <option value="Algeria">Algeria</option>
@@ -277,11 +279,29 @@
                     </select>
                     <br>
                     <br>
-                    <button><a href="Übersicht.html">Speichern</a></button>
+                    <button onclick="addReise()" type="reset">Speichern</button>
                 </fieldset>
             </form>
         </div>
     </div>
 </body>
-
+<script>
+    let edit=Liste1.liste[Liste1.edit]
+    let name=document.getElementById("name");
+    name.value=edit.name;
+    let date1=document.getElementById("date1");
+    date1.value=edit.date1;
+    let date2=document.getElementById("date2");
+    date2.value=edit.date2;
+    let country =document.getElementById("country");
+    country.value=edit.country;
+    function addReise(){
+        var name =document.getElementById("name").value;
+        var date1 =document.getElementById("date1").value;
+        var date2 =document.getElementById("date2").value;
+        var country =document.getElementById("country").value;
+        Liste1.editByIndex(Liste1.edit,new Reise(name,date1,date2,country));
+        window.location.href="Übersicht.html";
+    }
+</script>
 </html>

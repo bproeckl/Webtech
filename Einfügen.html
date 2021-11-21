@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Einfügen</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
 </head>
 
 <body>
@@ -30,7 +31,7 @@
                     <label for="reiseende">Reiseende:</label><br>
                     <input type="date" name="reiseende" id="reiseende" required><br>
                     <label for="reiseland">Reiseland:</label><br>
-                    <select required>
+                    <select id="reiseland" required>
                         <option value="Afghanistan">Afghanistan</option>
                         <option value="Albania">Albania</option>
                         <option value="Algeria">Algeria</option>
@@ -275,11 +276,19 @@
                     </select>
                     <br>
                     <br>
-                    <input type="submit" value="Hinzufügen">
+                    <input type="submit" value="Hinzufügen" onclick="addReise()">
                 </fieldset>
             </form>
         </div>
     </div>
 </body>
-
+<script>
+    function addReise(){
+        var name =document.getElementById("name").value;
+        var date1 =document.getElementById("reiseanfang").value;
+        var date2 =document.getElementById("reiseende").value;
+        var country =document.getElementById("reiseland").value;
+        Liste1.add(new Reise(name,date1,date2,country));
+    }
+</script>
 </html>
