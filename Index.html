@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,38 +8,39 @@
     <title>Login</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-   <header>
-       <h1>
-           Login
-       </h1>
-   </header> 
-
-   <form>
-        <fieldset style="border-color: black;">
-            <legend>Login:</legend>
-            <label for="email">E-Mail Adresse:</label><br>
-            <input type="email" name="E-Mail" id="email" required><br>
-            <label for="pword">Passwort:</label><br>
-            <input type="password" name="Passwort" id="pword" required><br>
-            <br>
-            <input type="button" value="Login" onclick="pasuser()">            
-        </fieldset>
-   </form>
-
-   <script type="text/javascript">
-       function pasuser() {
-        if (email.value=="huehne@htw-berlin.de" && pword.value=="hunter2") { 
-            location="Übersicht.html" 
-        } 
-        else {  
-            alert("E-Mail/Passwort ist ungültig")
-        }
-        localStorage.setItem(email.value, pword.value)
+    <header>
+        <h1>
+            Login
+        </h1>
+    </header>
+    <div class="flex-container">
+        <form>
+            <fieldset style="border-color: black;">
+                <legend>Login:</legend>
+                <label for="email">E-Mail Adresse:</label><br>
+                <input type="email" name="E-Mail" id="email" required><br>
+                <label for="pword">Passwort:</label><br>
+                <input type="password" name="Passwort" id="pword" required><br>
+                <br>
+                <input type="button" value="Login" onclick="pasuser()">
+            </fieldset>
+        </form>
+    </div>
+    <script type="text/javascript">
+        function pasuser() {
+            if (email.value == "huehne@htw-berlin.de" && pword.value == "hunter2") {
+                location = "Übersicht.html"
+            }
+            else {
+                alert("E-Mail/Passwort ist ungültig")
+            }
+            localStorage.setItem(email.value, pword.value)
         }
     </script>
 
 
 </body>
-</html>
 
+</html>
