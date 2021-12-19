@@ -296,13 +296,26 @@
     date2.value=edit.date2;
     let country =document.getElementById("country");
     country.value=edit.country;
-    function addReise(){
+    async function addReise(){
         var name =document.getElementById("name").value;
         var date1 =document.getElementById("date1").value;
         var date2 =document.getElementById("date2").value;
         var country =document.getElementById("country").value;
-        Liste1.editByIndex(Liste1.edit,new Reise(name,date1,date2,country));
-        window.location.href="Übersicht.html";
+
+        const data = {name, date1, date2, country};
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            };
+            const response = await fetch('/reiseBearbeiten', options);
+            const json = await response.json();
+            
+
+        //Liste1.editByIndex(Liste1.edit,new Reise(name,date1,date2,country));
+        //window.location.href="Übersicht.html";
     }
 </script>
 </html>
