@@ -28,15 +28,30 @@
             </fieldset>
         </form>
     </div>
+
+
     <script type="text/javascript">
-        function pasuser() {
-            if (email.value == "huehne@htw-berlin.de" && pword.value == "hunter2") {
-                location = "Übersicht.html"
+        async function pasuser() {
+            var mail =document.getElementById("email").value;
+            var password =document.getElementById("pword").value;
+
+            const data = {mail, password};
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            };
+            const response = await fetch('/???', options);
+            const json = await response.json();
+            if(json == 'success') {
+                fetch('')
             }
             else {
                 alert("E-Mail/Passwort ist ungültig")
             }
-            localStorage.setItem(email.value, pword.value)
+
         }
     </script>
 
