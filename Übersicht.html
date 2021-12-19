@@ -38,18 +38,40 @@
     </div>
 </body>
 <script>
-    function entfernen(index){
-        Liste1.deleteByIndex(index);
-        location.reload();
+    async function entfernen(index){
+        const data = {index};
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        };
+        //const response = await fetch('/entfernen', options);
+        //const json = await response.json();
+  
     }
     function edit(index){
-        Liste1.setEdit(index);
-        window.location.href = "Bearbeiten.html"
+        const data = {index};
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        };
+
+        //Liste1.setEdit(index);
+        //window.location.href = "Bearbeiten.html"
     }
     function update () {
+        const response = await fetch('/update', options);
+        const json = await response.json();
+        //const {name, date1, date2, country} = json;
+
         const tabelle = document.getElementById('table');
         var counter=0	  
-        for (const x of Liste1.liste) {
+        for (const x of json) {
             const reihe = tabelle.insertRow(1);
             for (var i = 0; i < 6; i++) {
                 var inhalt;
